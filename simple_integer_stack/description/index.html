@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>simple_integer_stack</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<style type="text/css">
+.bordered-table th {border:1px solid black; padding:0.5em; width:3em}
+.bordered-table { border-collapse:collapse;}
+.top-elem {background-color:DeepSkyBlue}
+</style>
+<!-- Copyright (c) 2013 Remous-Aris Koutsiamanis. This file is part of DataStructuresAndAlgorithmsAssignments. 
+	DataStructuresAndAlgorithmsAssignments is free software: you can redistribute it and/or modify 
+	it under the terms of the GNU Affero Public License as published by the Free 
+	Software Foundation, either version 3 of the License, or (at your option) 
+	any later version. DataStructuresAndAlgorithmsAssignments is distributed in the hope that it will 
+	be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero Public 
+	License for more details. You should have received a copy of the GNU Affero 
+	Public License along with testing-framework. If not, see <http://www.gnu.org/licenses/>. 
+	Contributors: Remous-Aris Koutsiamanis - initial implementation -->
+</head>
+<body>
+
+<h2>
+  Στοίβα ακεραίων.
+</h2>
+
+<h2>Σύνοψη</h2>
+<p>
+  Σε αυτή την άσκηση πρέπει να γράψετε κώδικα που να υλοποιεί μια απλή δομή δεδομένων: μια στοίβα ακεραίων.
+</p>
+<h2>Περιγραφή</h2>
+Στο πρόγραμμα θα συμπληρώσετε τις μεθόδους <code>SimpleIntegerStack, push, pop, top</code> στην κλάση <code>SimpleIntegerStack</code> στο πακέτο <code>gr.duth.ee.euclid.datastructures.simple_integer_stack</code>.
+<br/>
+Θα χρειαστεί επίσης να κατασκευάσετε κατάλληλες μεταβλητές/δηλώσεις δεδομένων εντός της κλάσης <code>SimpleIntegerStack</code>.
+<br/>
+Παρακάτω δίνονται οι περιγραφές των μεθόδων:
+<ul>
+<li><em>public SimpleIntegerStack(int maxSize)</em>:<br/>
+Αρχικοποιήστε την στοίβα με μέγιστο μέγεθος <code>maxSize</code> (π.χ. τον δείκτη που δείχνει στην κορυφή της στοίβας, 
+τον πίνακα που αποθηκεύει τα στοιχεία της στοίβας).
+Η παράμετρος <code>maxSize</code> παίρνει τιμές στο κλειστό διάστημα [3, 1000] και δεν χρειάζονται έλεγχοι για να διαπιστωθεί αν είναι όντως σε αυτό το διάστημα.
+</li>
+
+<li><em>public void push(int element)</em>:<br/>
+Αυτή η μέθοδος βάζει το στοιχείο με τιμή <code>element</code> στην κορυφή της στοίβας αν η στοίβα δεν είναι ήδη γεμάτη. <br/>
+Αν η στοίβα είναι ήδη γεμάτη, δεν μεταβάλλει καθόλου την στοίβα και δεν κάνει τίποτα με το στοιχείο.
+Οι τιμές που μπορούν να δοθούν ως παράμετρος <code>element</code> ανήκουν στο κλειστό διάστημα [0, 999] και δεν χρειάζονται έλεγχοι για να διαπιστωθεί αν είναι όντως σε αυτό το διάστημα.
+</li>
+
+<li><em>public void pop()</em>:<br/>
+Αυτή η μέθοδος βγάζει/αφαιρεί το στοιχείο από την κορυφή της στοίβας αν η στοίβα δεν είναι άδεια. <br/>
+Αν η στοίβα είναι άδεια, δεν μεταβάλλει καθόλου την στοίβα.
+</li>
+<li><em>public int top()</em>:<br/>
+Αυτή η μέθοδος επιστρέφει το στοιχείο στην κορυφή της στοίβας αν η στοίβα δεν είναι άδεια. <br/>
+Αν η στοίβα είναι άδεια, επιστρέφει την τιμή -1.
+</li>
+</ul>
+
+<h3>Λειτουργία</h3>
+Αν ξεκινήσουμε με μία κενή στοίβα μέγιστου μεγέθους 3, και χρωματίζοντας με <span class="top-elem">μπλε</span> το στοιχείο στην κορυφή της στοίβας:
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <td style="border:0 width:50em">(κενή)</td>
+  </tr>
+</table>
+Μετά από: <code>push(10)</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th class="top-elem">10</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+</table>
+
+Μετά από: <code>push(5)</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>10</th>
+    <th class="top-elem">5</th>
+    <th>&nbsp;</th>
+  </tr>
+</table>
+
+Μετά από: <code>push(42)</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>10</th>
+    <th>5</th>
+    <th class="top-elem">42</th>
+  </tr>
+</table>
+
+Μετά από: <code>push(99)</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>10</th>
+    <th>5</th>
+    <th class="top-elem">42</th>
+    <td style="border:0 width:50em">(καμμία μεταβολή γιατί είναι ήδη γεμάτη)</td>
+  </tr>
+</table> 
+
+Μετά από: <code>pop()</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>10</th>
+    <th class="top-elem">5</th>
+    <th>&nbsp;</th>
+  </tr>
+</table>
+
+Μετά από: <code>pop()</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th class="top-elem">10</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+</table>
+Μετά από: <code>pop()</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <td style="border:0 width:50em">(κενή)</td>
+  </tr>
+</table>
+Μετά από: <code>pop()</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <td style="border:0 width:50em">(καμμία μεταβολή γιατί είναι ήδη κενή)</td>
+  </tr>
+</table>
+Μετά από: <code>push(78)</code>
+<table class="bordered-table">
+  <tr>
+    <th>Στοίβα:</th>
+    <th class="top-elem">78</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+</table>
+<h3>Παράδειγμα</h3>
+
+<code>
+<pre style="border:1px solid #000">
+SimpleIntegerStack stack = new SimpleIntegerStack(3);
+assert(stack.top() == -1);
+
+stack.push(10);
+assert(stack.top() == 10);
+
+stack.push(5);
+assert(stack.top() == 5);
+
+stack.push(42);
+assert(stack.top() == 42);
+
+stack.push(99);
+assert(stack.top() == 42);
+
+stack.pop();
+assert(stack.top() == 5);
+
+stack.pop();
+assert(stack.top() == 10);
+
+stack.pop();
+assert(stack.top() == -1);
+
+stack.pop();
+assert(stack.top() == -1);
+
+stack.push(78);
+assert(stack.top() == 78);
+</pre>
+</code>
+
+<p>
+  Καλή επιτυχία!
+</p>
+
+</body>
+</html>
